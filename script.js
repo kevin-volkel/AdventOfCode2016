@@ -2172,8 +2172,13 @@ function dayThreePartTwo(){
     }
 
     for(let i = 0; i < 3; i++){
-        for(row in input3){
-            
+        for(let row = 0; row < input3.length; row+=3){
+            let angles = [input3[Number(row)][i], input3[Number(row)+1][i], input3[Number(row)+2][i]]
+            console.log(angles)
+            angles.sort(function(a, b){return a-b})
+            if(Number(angles[0]) + Number(angles[1]) > Number(angles[2])){
+                possible++;
+            }
         }
     }
     
